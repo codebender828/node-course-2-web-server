@@ -3,6 +3,7 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 //  Express server middleware
+const port = process.env.PORT || 3000;
 const app = express();
 
 // Middleware
@@ -67,7 +68,7 @@ app.get('/bad', (req,res) => {
     })
 });
 
-app.listen(8080, () => {
-    console.log('Server started at port 8080');
+app.listen(port, () => {
+    console.log(`Server started at port ${port}`);
     
 });
