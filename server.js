@@ -3,7 +3,7 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 //  Express server middleware
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const app = express();
 
 // Middleware
@@ -61,6 +61,13 @@ app.get('/about', (req, res) => {
         pageTitle: 'About Page'
     });
 });
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects',
+        welcomeMessage: 'These are some of our projects'
+    })
+})
 
 app.get('/bad', (req,res) => {
     res.send({
